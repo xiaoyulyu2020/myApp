@@ -9,8 +9,10 @@
 
             <div>
                 <h5>
-                    {{room_test.id}} -- <a href="/room/{{ room_test.id }}">{{room_test.name}}</a>
-                    <!-- because we render rooms in the base.views with home request, we can access the value from here -->
+                    {{room_test.id}} -- <a href="{% url 'room' room_test.id %}">{{room_test.name}}</a>
+                    <!-- because we render rooms in the base.views with home request, we can access the value from here 
+                    note: Django url tag: https://www.geeksforgeeks.org/url-django-template-tag/
+                    -->
                 </h5>
             </div>
 
