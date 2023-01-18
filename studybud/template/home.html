@@ -5,11 +5,11 @@
 
   <div>
     <div>
-        {% for room in rooms %}
+        {% for room_test in rooms %}
 
             <div>
                 <h5>
-                    {{room.id}} -- {{room.name}}
+                    {{room_test.id}} -- <a href="/room/{{ room_test.id }}">{{room_test.name}}</a>
                     <!-- because we render rooms in the base.views with home request, we can access the value from here -->
                 </h5>
             </div>
