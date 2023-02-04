@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{% block content %}
+{% if form.errors %}
+<div class="alert alert-warning alert-dismissible fade show"
+    role="alert">
+    There was an error with your form
+    <button type="button" class="btn-close" data-bs-dismiss="alert"
+        aria-label="Close"></button></div>
+{% endif %}
+<h1>Regiter Patient</h1>
+
+<form action="" method=POST>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <input type="submit" value="Submit" class="btn btn-secondary">
+
+</form>
+{% endblock content %}

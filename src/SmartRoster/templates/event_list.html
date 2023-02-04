@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+
+{% block content %}
+<table class="table table-striped table-hover">
+    {% for e in form %}
+    <tr>
+        <td>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Employee:{% for ep in e.employees.all %}
+                    <li>{{ep}}</li>
+                    {% endfor %}
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Event Name:{{e.name}}</li>
+                    <li class="list-group-item">Patient:{{e.patient}}</li>
+                    <li class="list-group-item">Start:{{e.start}}</li>
+                    <li class="list-group-item">End:{{e.end}}</li>
+                    <li class="list-group-item">Duty Manager:{{e.manager}}</li>
+                    <li class="list-group-item">Description:{{e.description}}</li>
+                    <li class="list-group-item"><a href="#"><a class="btn
+                                btn-primary"
+                                href="{% url 'event_update' e.id %}"
+                                role="button">Edit</a></a>
+                    </li>
+                    <li class="list-group-item"><a class="btn
+                            btn-danger"
+                            href="{% url 'event_delete' e.id %}"
+                            role="button">Delete</a></a>
+                </li>
+            </ul>
+        </div>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+{% endblock content %}
